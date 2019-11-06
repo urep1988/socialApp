@@ -4,7 +4,7 @@ import { TouchableOpacity, Image, Text } from "react-native";
 
 import styles from "./styles";
 
-const User = ({ user: { name, image, id }, onPress }) => (
+const User = ({ user: { name, image, id, isMy }, onPress }) => (
   <TouchableOpacity
     style={styles.container}
     onPress={() => onPress(id)}
@@ -14,7 +14,7 @@ const User = ({ user: { name, image, id }, onPress }) => (
       source={image}
     />
     <Text style={styles.name}>
-      {name}
+      {isMy ? 'Your Story' : name}
     </Text>
   </TouchableOpacity>
 );
